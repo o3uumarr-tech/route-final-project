@@ -57,6 +57,7 @@ predict = st.button("Predict Salary")
 
 
 
+
 df.head()
 
 df.info()
