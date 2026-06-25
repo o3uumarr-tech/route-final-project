@@ -21,6 +21,13 @@ st.write("Enter employee information to predict salary")
 
 st.sidebar.header("Employee Information")
 
+
+df=pd.read_csv(r"C:\Users\BASEL\OneDrive\Desktop\finalproj\job_salary_prediction_dataset.csv")
+
+job_titles = sorted(df["job_title"].unique())
+locations = sorted(df["location"].unique())
+education_levels = sorted(df["education_level"].unique())
+
 experience = st.number_input(
     "Experience Years",
     min_value=0,
@@ -28,23 +35,26 @@ experience = st.number_input(
     value=1
 )
 
-job_title = st.number_input("Job Title", 0, 20, 0)
+job_title = st.selectbox(
+    "Job Title",
+    job_titles
+)
 
-education_level = st.number_input("Education Level", 0, 10, 0)
+education_level = st.selectbox(
+    "Education Level",
+    education_levels
+)
 
-location = st.number_input("Location", 0, 20, 0)
+location = st.selectbox(
+    "Location",
+    locations
+)
 
 
 predict = st.button("Predict Salary")
 
 
 
-
-
-
-
-
-df=pd.read_csv(r"C:\Users\BASEL\OneDrive\Desktop\finalproj\job_salary_prediction_dataset.csv")
 
 
 df.head()
@@ -83,11 +93,13 @@ df.columns
 
 from sklearn.preprocessing import LabelEncoder
 
-label_encoder = LabelEncoder()
+job_encoder = LabelEncoder()
+location_encoder = LabelEncoder()
+education_encoder = LabelEncoder()
 
-
-for col in df.select_dtypes(include='object').columns:
-    df[col] = label_encoder.fit_transform(df[col])
+df["job_title"] = job_encoder.fit_transform(df["job_title"])
+df["location"] = location_encoder.fit_transform(df["location"])
+df["education_level"] = education_encoder.fit_transform(df["education_level"])
 
 X = df[['experience_years',
         'education_level',
@@ -123,7 +135,6 @@ X_train.head()
 
 
 
-X = pd.get_dummies(X, drop_first=True)
 
 
 from sklearn.model_selection import train_test_split
@@ -143,11 +154,15 @@ linear.fit(X_train, y_train)
 
 if predict:
 
+    job_title_encoded = job_encoder.transform([job_title])[0]
+    location_encoded = location_encoder.transform([location])[0]
+    education_encoded = education_encoder.transform([education_level])[0]
+
     prediction = linear.predict([[
         experience,
-        education_level,
-        job_title,
-        location
+        education_encoded,
+        job_title_encoded,
+        location_encoded
     ]])[0]
 
     st.write("Predicted Salary:")
