@@ -13,6 +13,6 @@ Omar Zoghby
 used dataset: "C:\Users\BASEL\OneDrive\Desktop\finalproj\job_salary_prediction_dataset.csv"
 
 
-poject description: 
+project description: 
 This projeect works on salary prediction based on features like location, years of experience, job title and educational level
 we used linear regression because it's simple and effective for predicting numerical values (salaries).
