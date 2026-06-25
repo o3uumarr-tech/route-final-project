@@ -1,7 +1,7 @@
 Bassel Ashraf
-    -core programming.
+    -programming.
     -Performed data preprocessing, feature engineering, and categorical encoding (job titles, education levels).
-    -Built, trained, tuned, and evaluated the salary prediction machine learning model.
+    -Built,trained, and evaluated the salary prediction machine learning model.
     -Exported the final trained model for deployment.
 
 Omar Zoghby
