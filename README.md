@@ -1,3 +1,4 @@
+Team contribution:
 Bassel Ashraf
     -programming.
     -Performed data preprocessing, feature engineering, and categorical encoding (job titles, education levels).
@@ -8,3 +9,10 @@ Omar Zoghby
      -Developed the interactive user interface using Streamlit
      -Integrated the trained machine learning model into the web application for real-time predictions.
      -Managed the GitHub repository setup.
+
+used dataset: "C:\Users\BASEL\OneDrive\Desktop\finalproj\job_salary_prediction_dataset.csv"
+
+
+poject description: 
+This projeect works on salary prediction based on features like location, years of experience, job title and educational level
+we used linear regression because it's simple and effective for predicting numerical values (salaries).
