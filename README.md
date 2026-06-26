@@ -10,7 +10,7 @@ Omar Zoghby
      -Integrated the trained machine learning model into the web application for real-time predictions.
      -Managed the GitHub repository setup.
 
-used dataset: "C:\Users\BASEL\OneDrive\Desktop\finalproj\job_salary_prediction_dataset.csv"
+used dataset: https://www.kaggle.com/datasets/rkiattisak/salaly-prediction-for-beginer
 
 
 project description: 
