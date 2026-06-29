@@ -1,4 +1,4 @@
-kTeam contribution:
+Team contribution:
 Bassel Ashraf
     -programming.
     -Performed data preprocessing, feature engineering, and categorical encoding (job titles, education levels).
